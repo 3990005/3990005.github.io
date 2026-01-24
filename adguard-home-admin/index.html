@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdGuard Home Admin - iOS App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #888;
+            text-decoration: none;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #fff;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 27px;
+            background: linear-gradient(135deg, #0d9488 0%, #06b6d4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            box-shadow: 0 15px 40px rgba(13, 148, 136, 0.3);
+        }
+
+        .app-icon svg {
+            width: 60px;
+            height: 60px;
+            fill: white;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            color: #a0a0a0;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .app-store-badge {
+            display: inline-block;
+        }
+
+        .app-store-badge img {
+            height: 50px;
+        }
+
+        .features {
+            margin-bottom: 60px;
+        }
+
+        .features h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #14b8a6;
+        }
+
+        .feature-card p {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .links-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .links-section h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .links-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .links-list a {
+            color: #14b8a6;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .links-list a:hover {
+            color: #2dd4bf;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-link">&larr; Back to all apps</a>
+
+        <div class="hero">
+            <div class="app-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                </svg>
+            </div>
+            <h1>AdGuard Home Admin</h1>
+            <p class="tagline">Take control of your network's DNS</p>
+            <!-- Uncomment when app is live on App Store -->
+            <!-- <a href="https://apps.apple.com/app/idXXXXXXXXXX" class="app-store-badge">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a> -->
+        </div>
+
+        <section class="features">
+            <h2>Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Real-Time Query Log</h3>
+                    <p>Watch DNS queries stream live. Perfect for troubleshooting or spotting suspicious activity on your network.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Interactive Dashboard</h3>
+                    <p>View stats, 24-hour activity graphs, and top domains. Tap any item to dive deeper into your query log.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Client Management</h3>
+                    <p>Configure per-device filtering, blocked services, safe browsing, and parental controls for each client.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Filter Control</h3>
+                    <p>Manage blocklists, add custom rules, configure DNS rewrites, and unblock domains with a tap.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Multi-Server Support</h3>
+                    <p>Connect to multiple AdGuard Home servers and switch between them seamlessly.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Secure</h3>
+                    <p>Credentials stored securely in iOS Keychain. Supports HTTPS connections.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="links-section">
+            <h2>Links</h2>
+            <div class="links-list">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="mailto:gregbuildsapps@gmail.com">Contact Support</a>
+                <a href="https://adguard.com/adguard-home/overview.html" target="_blank" rel="noopener">AdGuard Home Website</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Greg Moore</p>
+        </footer>
+    </div>
+</body>
+</html>
