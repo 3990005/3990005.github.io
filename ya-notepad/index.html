@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ya Notepad - macOS App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #888;
+            text-decoration: none;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #fff;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 27px;
+            background: linear-gradient(135deg, #f5e6a3 0%, #e8d48b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            box-shadow: 0 15px 40px rgba(200, 170, 60, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .app-icon svg {
+            width: 70px;
+            height: 70px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            color: #a0a0a0;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .app-store-badge {
+            display: inline-block;
+        }
+
+        .app-store-badge img {
+            height: 50px;
+        }
+
+        .features {
+            margin-bottom: 60px;
+        }
+
+        .features h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #d4a843;
+        }
+
+        .feature-card p {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .philosophy {
+            margin-bottom: 60px;
+        }
+
+        .philosophy h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .philosophy-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .philosophy-card p {
+            color: #a0a0a0;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .philosophy-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .disabled-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-bottom: 60px;
+        }
+
+        .disabled-grid h2 {
+            grid-column: 1 / -1;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .disabled-tag {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 14px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            text-align: center;
+            font-size: 0.95rem;
+            color: #666;
+            text-decoration: line-through;
+            text-decoration-color: #444;
+        }
+
+        .links-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .links-section h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .links-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .links-list a {
+            color: #d4a843;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .links-list a:hover {
+            color: #e8c45a;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-link">&larr; Back to all apps</a>
+
+        <div class="hero">
+            <div class="app-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Spiral bar -->
+                    <rect x="12" y="8" width="76" height="10" rx="5" fill="#4a5568"/>
+                    <!-- Rings -->
+                    <circle cx="22" cy="13" r="3.5" fill="#b0b5bc" stroke="#7a7f86" stroke-width="0.5"/>
+                    <circle cx="22" cy="13" r="1.5" fill="#4a5568"/>
+                    <circle cx="35" cy="13" r="3.5" fill="#b0b5bc" stroke="#7a7f86" stroke-width="0.5"/>
+                    <circle cx="35" cy="13" r="1.5" fill="#4a5568"/>
+                    <circle cx="50" cy="13" r="3.5" fill="#b0b5bc" stroke="#7a7f86" stroke-width="0.5"/>
+                    <circle cx="50" cy="13" r="1.5" fill="#4a5568"/>
+                    <circle cx="65" cy="13" r="3.5" fill="#b0b5bc" stroke="#7a7f86" stroke-width="0.5"/>
+                    <circle cx="65" cy="13" r="1.5" fill="#4a5568"/>
+                    <circle cx="78" cy="13" r="3.5" fill="#b0b5bc" stroke="#7a7f86" stroke-width="0.5"/>
+                    <circle cx="78" cy="13" r="1.5" fill="#4a5568"/>
+                    <!-- Paper -->
+                    <rect x="12" y="18" width="76" height="74" rx="4" fill="#fff8dc" stroke="#c8b87a" stroke-width="0.8"/>
+                    <!-- Red margin -->
+                    <line x1="28" y1="18" x2="28" y2="92" stroke="#d47070" stroke-width="0.6" opacity="0.5"/>
+                    <!-- Blue lines -->
+                    <line x1="18" y1="32" x2="82" y2="32" stroke="#a0b8d8" stroke-width="0.5" opacity="0.5"/>
+                    <line x1="18" y1="42" x2="82" y2="42" stroke="#a0b8d8" stroke-width="0.5" opacity="0.5"/>
+                    <line x1="18" y1="52" x2="82" y2="52" stroke="#a0b8d8" stroke-width="0.5" opacity="0.5"/>
+                    <line x1="18" y1="62" x2="82" y2="62" stroke="#a0b8d8" stroke-width="0.5" opacity="0.5"/>
+                    <line x1="18" y1="72" x2="82" y2="72" stroke="#a0b8d8" stroke-width="0.5" opacity="0.5"/>
+                    <line x1="18" y1="82" x2="82" y2="82" stroke="#a0b8d8" stroke-width="0.5" opacity="0.5"/>
+                    <!-- Text lines -->
+                    <line x1="32" y1="30" x2="72" y2="30" stroke="#555" stroke-width="1.2" opacity="0.4"/>
+                    <line x1="32" y1="40" x2="78" y2="40" stroke="#555" stroke-width="1.2" opacity="0.4"/>
+                    <line x1="32" y1="50" x2="62" y2="50" stroke="#555" stroke-width="1.2" opacity="0.4"/>
+                    <line x1="32" y1="60" x2="75" y2="60" stroke="#555" stroke-width="1.2" opacity="0.4"/>
+                    <line x1="32" y1="70" x2="55" y2="70" stroke="#555" stroke-width="1.2" opacity="0.4"/>
+                    <line x1="32" y1="80" x2="70" y2="80" stroke="#555" stroke-width="1.2" opacity="0.4"/>
+                    <!-- Corner fold -->
+                    <polygon points="78,92 88,92 88,82" fill="transparent"/>
+                    <polygon points="78,82 78,92 88,82" fill="#eee0a8" stroke="#c8b87a" stroke-width="0.5"/>
+                </svg>
+            </div>
+            <h1>Ya Notepad</h1>
+            <p class="tagline">A plain text editor that just works</p>
+            <p class="subtitle">No spell check. No autocorrect. No distractions.</p>
+            <!-- <a href="#" class="app-store-badge">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the Mac App Store">
+            </a> -->
+        </div>
+
+        <section class="features">
+            <h2>What It Does</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Plain Text</h3>
+                    <p>Opens, edits, and saves plain text files. UTF-8, nothing else. What you type is what you get.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Multiple Windows</h3>
+                    <p>Open as many files as you need. Each window has its own document with independent undo history.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Monospace Font</h3>
+                    <p>Clean, consistent text with the system monospace font. Every character lines up.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Word Wrap</h3>
+                    <p>Long lines wrap at the window edge. Resize the window and the text reflows to match.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Undo &amp; Redo</h3>
+                    <p>Full undo and redo support. Cmd+Z and Cmd+Shift+Z work exactly as you expect.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Unsaved Changes</h3>
+                    <p>Prompts before closing or opening over unsaved work. Your text won't disappear by accident.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="disabled-grid">
+            <h2>What It Doesn't Do</h2>
+            <div class="disabled-tag">Spell Check</div>
+            <div class="disabled-tag">Autocorrect</div>
+            <div class="disabled-tag">Grammar</div>
+            <div class="disabled-tag">Smart Quotes</div>
+            <div class="disabled-tag">Smart Dashes</div>
+            <div class="disabled-tag">Link Detection</div>
+            <div class="disabled-tag">Data Detection</div>
+            <div class="disabled-tag">Text Completion</div>
+            <div class="disabled-tag">Rich Text</div>
+            <div class="disabled-tag">Markdown</div>
+            <div class="disabled-tag">AI Anything</div>
+            <div class="disabled-tag">Format Menu</div>
+        </div>
+
+        <section class="philosophy">
+            <h2>Why</h2>
+            <div class="philosophy-card">
+                <p>Every &ldquo;smart&rdquo; feature is code running against your input. Every Markdown renderer is an attack surface. Every AI integration is a network call with your data.</p>
+                <p>Ya Notepad has none of that. It's a native macOS app built with SwiftUI wrapping a plain NSTextView with every smart feature explicitly turned off. No Electron, no web views, no bundled runtime.</p>
+                <p>Sometimes the best feature is the absence of features.</p>
+            </div>
+        </section>
+
+        <section class="links-section">
+            <h2>Links</h2>
+            <div class="links-list">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="mailto:gregbuildsapps@gmail.com">Contact Support</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Greg Moore</p>
+        </footer>
+    </div>
+</body>
+</html>
