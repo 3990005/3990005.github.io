@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NZBgk - iOS App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #888;
+            text-decoration: none;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #fff;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 27px;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            box-shadow: 0 15px 40px rgba(124, 58, 237, 0.3);
+        }
+
+        .app-icon svg {
+            width: 60px;
+            height: 60px;
+            fill: white;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            color: #a0a0a0;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .app-store-badge {
+            display: inline-block;
+        }
+
+        .app-store-badge img {
+            height: 50px;
+        }
+
+        .features {
+            margin-bottom: 60px;
+        }
+
+        .features h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #a855f7;
+        }
+
+        .feature-card p {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .links-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .links-section h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .links-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .links-list a {
+            color: #a855f7;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .links-list a:hover {
+            color: #c084fc;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-link">&larr; Back to all apps</a>
+
+        <div class="hero">
+            <div class="app-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+            </div>
+            <h1>NZBgk</h1>
+            <p class="tagline">Search, save & download NZBs</p>
+            <!-- <a href="https://apps.apple.com/us/app/nzbgk/id0000000000" class="app-store-badge">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a> -->
+        </div>
+
+        <section class="features">
+            <h2>Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Powerful Search</h3>
+                    <p>Browse the full NZBGeek index. Filter by category, sort by date, size, name, or downloads, and limit results by age.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Saved Seeks</h3>
+                    <p>Subscribe to your NZBGeek saved search feeds and monitor new matches on the go.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Cart Management</h3>
+                    <p>Add items to your NZBGeek cart with a swipe. View, remove, and share items without opening a browser.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Rich Detail Views</h3>
+                    <p>See TMDB poster art, ratings, genres, and synopsis alongside file size, post date, and episode info.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Download & Share</h3>
+                    <p>Export NZB files directly to your device or share links to any app with a single tap.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Secure</h3>
+                    <p>API keys stored securely in iOS Keychain. Your credentials never leave your device.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="links-section">
+            <h2>Links</h2>
+            <div class="links-list">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="mailto:gregbuildsapps@gmail.com">Contact Support</a>
+                <a href="https://nzbgeek.info" target="_blank" rel="noopener">NZBGeek Website</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Greg Moore</p>
+        </footer>
+    </div>
+</body>
+</html>
