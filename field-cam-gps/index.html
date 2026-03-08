@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Cam GPS - iOS App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #888;
+            text-decoration: none;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #fff;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 27px;
+            margin: 0 auto 25px;
+            box-shadow: 0 15px 40px rgba(34, 139, 34, 0.25);
+            overflow: hidden;
+        }
+
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            color: #a0a0a0;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .app-store-badge {
+            display: inline-block;
+        }
+
+        .app-store-badge img {
+            height: 50px;
+        }
+
+        .features {
+            margin-bottom: 60px;
+        }
+
+        .features h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #4ade80;
+        }
+
+        .feature-card p {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .links-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .links-section h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .links-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .links-list a {
+            color: #4ade80;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .links-list a:hover {
+            color: #86efac;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-link">&larr; Back to all apps</a>
+
+        <div class="hero">
+            <div class="app-icon">
+                <img src="icon.png" alt="Field Cam GPS app icon">
+            </div>
+            <h1>Field Cam GPS</h1>
+            <p class="tagline">Geotagged photo documentation for the field</p>
+            <p class="subtitle">Stamp every photo with GPS, compass heading, timestamps, and job info</p>
+            <!-- <a href="#" class="app-store-badge">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a> -->
+        </div>
+
+        <section class="features">
+            <h2>Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>GPS Tagging</h3>
+                    <p>Every photo is automatically stamped with precise GPS coordinates. Know exactly where each shot was taken.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Compass Heading</h3>
+                    <p>Captures magnetic direction and degree bearing so you can document which way the camera was pointing.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Job Tracking</h3>
+                    <p>Assign a Job/PM number and location identifier to each session. All photos are stamped with your project info.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Custom Watermark</h3>
+                    <p>Add your company logo as a watermark with adjustable opacity and size. Brand every photo you take.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Multi-Lens Camera</h3>
+                    <p>Switch between ultra-wide (0.5x) and standard (1x) lenses. Front and back cameras with flash control.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Photo Descriptions</h3>
+                    <p>Add short descriptions to photos before capture. Text is burned directly into the image overlay.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Custom Labels</h3>
+                    <p>Rename overlay fields to match your workflow. Change "Job" and "Location" to whatever fits your industry.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Auto Album</h3>
+                    <p>Photos are automatically saved to a dedicated "Field Cam" album in your photo library for easy organization.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Privacy First</h3>
+                    <p>No data collection, no tracking, no network calls. Your photos and location data stay on your device.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="links-section">
+            <h2>Links</h2>
+            <div class="links-list">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="mailto:gregbuildsapps@gmail.com">Contact Support</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Greg Moore</p>
+        </footer>
+    </div>
+</body>
+</html>
